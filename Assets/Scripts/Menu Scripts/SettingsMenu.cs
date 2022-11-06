@@ -16,23 +16,22 @@ public class SettingsMenu : MonoBehaviour
     public TMP_Text timerSliderValue;
     
     bool isFullscreen;
-    public int roundNumber = 3;
-    public float roundTimer = 50f;
+    public float roundNumber = 3;
+    public static float roundTimer = 50;
 
     Resolution[] resolutions;
 
     void Start()
     {
         showResolutions();
-        defaultsettings();
+        
     }
 
-    public void defaultsettings()
+    private void Awake() 
     {
-        PlayerPrefs.SetFloat("roundTimer", 50f);
-        PlayerPrefs.SetInt("roundNumber", 3);
-        PlayerPrefs.Save();
+        DontDestroyOnLoad(this.gameObject);
     }
+
 
     private void showResolutions()
     {
@@ -95,13 +94,10 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetRoundnumber()
     {
-        PlayerPrefs.SetInt("roundNumber", roundNumber);
-        PlayerPrefs.Save();
+        roundNumber = sliderUI.value;
     }
     public void SetRoundTimer()
     {
-        PlayerPrefs.SetFloat("roundTimer", sliderUI.value);
-        Debug.Log(PlayerPrefs.GetFloat("roundTimer", sliderUI.value));
-        PlayerPrefs.Save();
+        roundTimer = sliderUI.value;
     }
 }
