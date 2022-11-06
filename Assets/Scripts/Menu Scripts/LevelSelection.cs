@@ -11,17 +11,17 @@ public class LevelSelection : MonoBehaviour
 
     public void SelectFirstStage()
     {
-        selectedLevel = 2;
+        selectedLevel = 1;
     }
     
     public void SelectSecondStage()
     {
-        selectedLevel = 3;
+        selectedLevel = 2;
     }
 
     public void SelectThirdStage()
     {
-        selectedLevel = 4;
+        selectedLevel = 3;
     }
 
     public void setfirstoption()

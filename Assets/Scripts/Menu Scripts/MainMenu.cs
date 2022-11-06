@@ -9,22 +9,14 @@ public class MainMenu : MonoBehaviour
     public GameObject firstmain;
     public GameObject firstmainreopen;
 
-    public void PlayGame() 
-    {
-       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1 ); 
-    }
-
+    //Quits the Game when the 'Exit' button is pressed on the Main menu
     public void QuitGame() 
     {
         Application.Quit();
         Debug.Log("Game Quit");
     }
 
-    public void OptionsMenu() 
-    {
-        GetComponent<Canvas>().enabled = false;
-    }
-
+    //Sets the selected menu button to the options menu when options menu is closed
     public void reopenMain()
     {
         //clear Eventsystem Current Selection

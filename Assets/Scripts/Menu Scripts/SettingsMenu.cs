@@ -9,21 +9,29 @@ using System;
 
 public class SettingsMenu : MonoBehaviour
 {
+    public GameObject firstoptions;
     public AudioMixer audioMixer;
     public TMP_Dropdown resolutionDropdown;
     public Slider sliderUI;
-    private TMP_Text textSliderValue;
-    public GameObject firstoptions;
+    public TMP_Text timerSliderValue;
+    
+    bool isFullscreen;
+    public int roundNumber = 3;
+    public float roundTimer = 50f;
 
     Resolution[] resolutions;
-
-    bool isFullscreen;
-    public int roundNumber = 0;
-    public int roundTimer = 0;
 
     void Start()
     {
         showResolutions();
+        defaultsettings();
+    }
+
+    public void defaultsettings()
+    {
+        PlayerPrefs.SetFloat("roundTimer", 50f);
+        PlayerPrefs.SetInt("roundNumber", 3);
+        PlayerPrefs.Save();
     }
 
     private void showResolutions()
@@ -45,16 +53,15 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
-        textSliderValue = GetComponent<TMP_Text>();
+        timerSliderValue = GetComponent<TMP_Text>();
         ShowSliderValue();
     }
 
     private void ShowSliderValue()
     {
         string sliderMessage = "" + sliderUI.value;
-        textSliderValue.text = sliderMessage;
+        timerSliderValue.text = sliderMessage;
     }
-
 
     public void setfirstoption()
     {
@@ -73,7 +80,6 @@ public class SettingsMenu : MonoBehaviour
     public void SetVolume (float volume)
     {
         audioMixer.SetFloat("Volume", volume);
-
     }
 
     public void SetFullscreen (bool isFullscreen)
@@ -90,9 +96,12 @@ public class SettingsMenu : MonoBehaviour
     public void SetRoundnumber()
     {
         PlayerPrefs.SetInt("roundNumber", roundNumber);
+        PlayerPrefs.Save();
     }
     public void SetRoundTimer()
     {
-        PlayerPrefs.SetInt("roundTimer", roundTimer);
+        PlayerPrefs.SetFloat("roundTimer", sliderUI.value);
+        Debug.Log(PlayerPrefs.GetFloat("roundTimer", sliderUI.value));
+        PlayerPrefs.Save();
     }
 }
