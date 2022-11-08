@@ -14,24 +14,38 @@ public class HUD : MonoBehaviour
     public TMP_Text P1name;
     public TMP_Text P2name;
     public TMP_Text rTimer;
+    public TMP_Text rNumber;
     
     private int selectedCharacter;
     private int P2selectedCharacter;
-    private float startingTimer;
-    private float currentTime = 0f;
+    public static float startingTimer;
+    public static float currentTime = 0f;
+    private float roundNumber;
     
 
     // Start is called before the first frame update
     void Start()
     {   
-        startingTimer =  SettingsMenu.roundTimer;
+        startingTimer = SettingsMenu.roundTimer;
         currentTime = startingTimer;
+        roundNumber = RoundManager.roundsleft;
         setSprites();
         setnames();
     }
 
         // Update is called once per frame
     void Update()
+    {
+        startTimer();
+        displayroundNumber();
+    }
+
+    private void displayroundNumber()
+    {
+        rNumber.text = "Round: " + roundNumber;
+    }
+
+    private void startTimer()
     {
         currentTime -= 1 * Time.deltaTime;
         currentTime = Mathf.Round(currentTime * 1000f) / 1000f;

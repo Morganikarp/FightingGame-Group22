@@ -16,15 +16,14 @@ public class SettingsMenu : MonoBehaviour
     public TMP_Text timerSliderValue;
     
     bool isFullscreen;
-    public float roundNumber = 3;
+    public static float roundNumber = 3;
     public static float roundTimer = 50;
 
     Resolution[] resolutions;
 
     void Start()
     {
-        showResolutions();
-        
+        showResolutions();     
     }
 
     private void Awake() 
