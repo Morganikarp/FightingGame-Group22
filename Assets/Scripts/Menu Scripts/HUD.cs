@@ -15,11 +15,16 @@ public class HUD : MonoBehaviour
     public TMP_Text P2name;
     public TMP_Text rTimer;
     public TMP_Text rNumber;
+    public TMP_Text startCountdownText;
     
     private int selectedCharacter;
     private int P2selectedCharacter;
     public static float startingTimer;
     public static float currentTime = 0f;
+    private float elapsedTime = 0f;
+    private float startedTime = 0f;
+    private float startCountdown = 5;
+    private float remainingTime = 0;
     private float roundNumber;
     
 
@@ -28,16 +33,42 @@ public class HUD : MonoBehaviour
     {   
         startingTimer = SettingsMenu.roundTimer;
         currentTime = startingTimer;
-        roundNumber = RoundManager.roundsleft;
+        roundNumber = RoundManager.roundsleft;       
         setSprites();
         setnames();
+        displayroundNumber();
+        startcountdowntimer();
     }
 
         // Update is called once per frame
     void Update()
     {
+        roundStartTimer();
+    }
+
+    void startcountdowntimer()
+    {
+        startedTime = Time.realtimeSinceStartup;
+    }
+
+    void roundStartTimer()
+    {
+        if (remainingTime >= 0)
+        {
+            Time.timeScale = 0;
+            elapsedTime = Time.realtimeSinceStartup - startedTime;
+            remainingTime = startCountdown - elapsedTime;
+            remainingTime = Mathf.RoundToInt(remainingTime);
+            startCountdownText.enabled = true;
+            startCountdownText.text = "" + remainingTime;
+        }
+        else
+        {
+        Time.timeScale = 1;
+        startCountdownText.enabled = false;
         startTimer();
-        displayroundNumber();
+        }
+  
     }
 
     private void displayroundNumber()
@@ -48,8 +79,7 @@ public class HUD : MonoBehaviour
     private void startTimer()
     {
         currentTime -= 1 * Time.deltaTime;
-        currentTime = Mathf.Round(currentTime * 1000f) / 1000f;
-        rTimer.text = "Time Left: " + currentTime;
+        rTimer.text = "Time Left: " + Mathf.Round(currentTime);
     }
 
     private void setSprites()

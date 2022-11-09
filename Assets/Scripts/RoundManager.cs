@@ -25,12 +25,11 @@ public class RoundManager : MonoBehaviour
     private int p1Score;
     private int p2Score;
 
-    // Start is called before the first frame update
     void Start()
     {
-        p1Score = PlayerPrefs.GetInt("player1Score");
+        p1Score = PlayerPrefs.GetInt("player1Score"); //assigns p1 and p2 score when the scene is restarted
         p2Score = PlayerPrefs.GetInt("player2Score");
-        currentTimer = HUD.currentTime;
+        currentTimer = HUD.currentTime; //calls 
         startTimer = HUD.startingTimer;   
         if (roundsleft < 3)  //Reset's rounds left when reloading the scene with a number below zero
         {
@@ -57,8 +56,8 @@ public class RoundManager : MonoBehaviour
         {
             nextRound();
         }
-        
     }
+
 
     void OnTriggerExit2D(Collider2D other)
     {
