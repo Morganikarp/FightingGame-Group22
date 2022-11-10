@@ -837,9 +837,9 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 717311297}
-    m_SelectOnDown: {fileID: 1179346590}
+    m_SelectOnDown: {fileID: 206192285}
     m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 1291667371}
+    m_SelectOnRight: {fileID: 1179346590}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1484,7 +1484,7 @@ RectTransform:
   m_GameObject: {fileID: 134362215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.86605364, y: 0.86605364, z: 0.86605364}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1844389178}
@@ -2368,8 +2368,8 @@ MonoBehaviour:
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 1179346590}
-    m_SelectOnRight: {fileID: 1291667371}
+    m_SelectOnLeft: {fileID: 93784989}
+    m_SelectOnRight: {fileID: 1179346590}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -5237,7 +5237,7 @@ MonoBehaviour:
     m_SelectOnUp: {fileID: 132986815}
     m_SelectOnDown: {fileID: 93784989}
     m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 1291667371}
+    m_SelectOnRight: {fileID: 1179346590}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -6255,7 +6255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &916165522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7591,7 +7591,6 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   P1CBorder: {fileID: 168760953}
   P2CBorder: {fileID: 2040400973}
-  LevelSelect: {fileID: 916165521}
   firstcharacteroption: {fileID: 302223991}
   selectedCharacter: 0
   P2selectedCharacter: 0
@@ -7682,7 +7681,7 @@ GameObject:
   - component: {fileID: 1179346589}
   - component: {fileID: 1179346590}
   m_Layer: 5
-  m_Name: Volume (1)
+  m_Name: MainVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7710,7 +7709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 521.37354, y: -156.1388}
+  m_AnchoredPosition: {x: 538, y: -137}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1179346590
@@ -7728,10 +7727,10 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 93784989}
+    m_SelectOnUp: {fileID: 1844389179}
     m_SelectOnDown: {fileID: 206192285}
     m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 206192285}
+    m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -10625,7 +10624,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 916165521}
+      - m_Target: {fileID: 1811026471}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -11830,7 +11829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1811026472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12129,7 +12128,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 1291667371}
+    m_SelectOnDown: {fileID: 1179346590}
     m_SelectOnLeft: {fileID: 132986815}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -12666,7 +12665,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 916165521}
+      - m_Target: {fileID: 1161452267}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6

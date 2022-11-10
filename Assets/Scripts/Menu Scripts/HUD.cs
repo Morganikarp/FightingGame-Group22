@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Collections.Specialized;
 
 public class HUD : MonoBehaviour
 {
@@ -30,10 +31,10 @@ public class HUD : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {   
+    {    
         startingTimer = SettingsMenu.roundTimer;
         currentTime = startingTimer;
-        roundNumber = RoundManager.roundsleft;       
+        roundNumber = RoundManager.roundsleft;    
         setSprites();
         setnames();
         displayroundNumber();
@@ -97,6 +98,5 @@ public class HUD : MonoBehaviour
         P1name.text = "Player 1: " + characterprefabs[selectedCharacter].name;
         P2name.text = "Player 2: " + characterprefabs[P2selectedCharacter].name;      
     }
-
 
 }

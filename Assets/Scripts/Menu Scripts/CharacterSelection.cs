@@ -15,22 +15,18 @@ public class CharacterSelection : MonoBehaviour
     public Vector3[] P2SelectPositions;
     public GameObject P1CBorder;
     public GameObject P2CBorder;
-    public GameObject LevelSelect;
     public GameObject firstcharacteroption;
-    private LevelSelection lS;
 
     
 
     public int selectedCharacter = 0;
     public int P2selectedCharacter = 0;
-    private int Scenetoload;
     bool player1Ready = false;
     bool player2Ready = false;
 
 
     void Start() 
     {
-        lS = LevelSelect.GetComponent<LevelSelection>();
         P1SelectPositions = new Vector3[P1cIcons.Length];
         P2SelectPositions = new Vector3[P2cIcons.Length];
         
@@ -124,7 +120,7 @@ public class CharacterSelection : MonoBehaviour
     {
         if (player2Ready == true && player1Ready == true)
         {
-            SceneManager.LoadScene(lS.selectedLevel);
+            SceneManager.LoadScene(1);
         }
         else 
         {
