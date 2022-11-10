@@ -94,8 +94,8 @@ public class HUD : MonoBehaviour
     {
         selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
         P2selectedCharacter = PlayerPrefs.GetInt("P2selectedCharacter");
-        P1name.text = "Player 2: " + characterprefabs[selectedCharacter].name;
-        P2name.text = "Player 1: " + characterprefabs[P2selectedCharacter].name;      
+        P1name.text = "Player 1: " + characterprefabs[selectedCharacter].name;
+        P2name.text = "Player 2: " + characterprefabs[P2selectedCharacter].name;      
     }
 
 
